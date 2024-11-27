@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .body-text {
+        font-size: 6vw; 
+    }
+
+    .fly-away {
+        font-size: 14vw; 
+    }
+
+    .fly-away-container {
+        padding: 10vh 0 15vh; 
+    }
+
+    .body-container {
+        padding: 0 10px; 
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .body-text {
+        font-size: 5vw; 
+    }
+
+    .fly-away {
+        font-size: 12vw; 
+    }
+
+    .fly-away-container {
+        padding: 8vh 0 12vh; 
+    }
+
+    .body-container {
+        padding: 0 15px; 
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .body-text {
+        font-size: 4.5vw; 
+    }
+
+    .fly-away {
+        font-size: 10vw; 
+    }
+
+    .fly-away-container {
+        padding: 6vh 0 10vh; 
+    }
+
+    .body-container {
+        padding: 0 20px; 
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .body-text {
+        font-size: 3vw; 
+    }
+
+    .fly-away {
+        font-size: 8vw;
+    }
+
+    .fly-away-container {
+        padding: 5vh 0 10vh; 
+    }
+
+    .body-container {
+        padding: 0 25px; 
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .body-text {
+        font-size: 2vw; 
+
+    }
+
+    .fly-away {
+        font-size: 6vw; 
+    }
+
+    .fly-away-container {
+        padding: 4vh 0 8vh; 
+    }
+
+    .body-container {
+        padding: 0 30px; 
+    }
+}
+   
+    @font-face {
+			font-family: "BUTTERFLY";
+			src: url("Fonts/BUTTERFLY.ttf");
+			font-weight: 100 900;  
+		}
+
+    @font-face {
+        font-family: "ABC Diatype";
+        src: url("Fonts/ABC Diatype/ABCDiatype-Light-Trial.woff");
+        
+    }
+
+    @font-face {
+        font-family: "GT Pressura" ;
+        src: url(Fonts/GT-Pressura/GT-Pressura-Light-Trial.woff2);
+    }
+
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+    }
+
+    .body-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            background-color: rgb(236, 255, 235);
+            overflow: hidden;
+            /* position: relative; */
+            /* min-height: 100vh;  */
+            padding: 0px;
+        }
+
+    .body-text{
+        font-family:"GT Pressura" ;
+        font-size: 1.2vw;
+        color: rgb(248, 248, 255);
+        position: absolute;
+        text-align: center;
+        left: 47%; 
+        top:60%;
+        cursor: pointer;
+
+    }
+   .title-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    
+
+   }
+
+   .title { 
+    font-family: "BUTTERFLY";
+    font-size: 230px;
+    font-variation-settings: "POST" 0 ;
+    text-align: center;
+    display: flex;
+    animation: title 3s ease-in-out infinite alternate;
+    letter-spacing: -20px;
+    /* text-shadow: 70px 90px 10px rgba(95, 54, 54, 0.7); */
+    
+   }
+
+   @keyframes title{
+             0% {
+                 font-variation-settings: "POST" 0;
+               }
+             50% {
+                 font-variation-settings: "POST" 1000;
+                }
+            100% {
+                 font-variation-settings: "POST" 0;
+               }
+            }
+
+    .sub-title-container {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: rgb(162, 206, 254);
+    z-index: 10;
+    padding: 20px;
+    /* box-shadow: 5px 10px 10px rgb(128, 132, 200); */
+    /* padding: 30px; */
+    }
+
+    .sub-title {
+        font-family:"GT Pressura" ;
+        font-size: 22px;
+        color: rgb(255, 255, 255);
+        text-align: center;
+        display: flex;
+        padding-left: 12%;
+        padding-right: 12%;
+    }
+
+    .sub-title-image {
+        width:80px;
+        display: flex;
+    }
+
+    .alphabet-container{
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: rgb(246, 209, 216);
+    /* border-radius: 10%; */
+    padding-top: 40px;
+    padding-bottom: 100px;
+    padding-right: 230px;
+    padding-left: 230px;
+   }
+   
+   
+    .alphabet {
+        font-family: "BUTTERFLY";
+        font-size: 250px;
+        font-variation-settings: "POST" 0 ;
+        display: flex;
+        text-align: center;
+        line-height: 0.7;
+        color: white;
+        letter-spacing: 30px; 
+        animation: alphabet 2s ease-in-out infinite alternate;
+        animation-play-state: paused;
+        /* text-shadow: 5px 10px 10px rgba(184, 137, 155, 0.7); */
+        
+    }
+
+    @keyframes alphabet{
+             0% {
+                 font-variation-settings: "POST" 0;
+               }
+             50% {
+                 font-variation-settings: "POST" 1000;
+                }
+            100% {
+                 font-variation-settings: "POST" 0;
+               }
+            }
+
+     /* .alphabet:hover {
+            animation-play-state:running ;
+            
+    } */
+    .alphabet-hovered {
+        animation-play-state:running ;
+    }
+
+
+    .header-container{
+       width: 100%;
+       /* background-image: url(line.png); */
+       position: relative;
+       align-items: center;
+       justify-content: center;
+       position: relative;
+       padding-top: 20px;
+    
+    }
+
+    .fly-away-container {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            /* gap: 10px; */
+            width: 90%;
+            /* height: 100%; */
+            z-index: 1;
+            padding: 100px 50px 150px 50px;
+            
+        }
+
+        .fly-away {
+            font-family: "BUTTERFLY";
+            font-size:9vw;
+            color: rgb(162, 206, 254);
+            font-variation-settings: "POST" 0;
+            position: relative;
+            cursor: pointer;
+            transition: transform 6s ease ;
+            /* letter-spacing: 100px; */
+            line-height: 70%;
+            z-index: 1;
+            
+        }
+
+        @keyframes flapping {
+            0% {
+                 font-variation-settings: "POST" 0; 
+               }
+            5% {
+                 font-variation-settings: "POST" 700; 
+               }
+             10% {
+                 font-variation-settings: "POST" 0; text-shadow: 5px 5px 5px rgba(180, 219, 180, 0.7);
+               }
+            15% {
+                 font-variation-settings: "POST" 700; 
+               }
+             20% {
+                 font-variation-settings: "POST" 0; 
+               }
+             25% {
+                 font-variation-settings: "POST" 700; 
+               }
+             30% {
+                 font-variation-settings: "POST" 0; text-shadow: 50px 50px 9px rgba(180, 219, 180, 0.7);
+               }
+             35% {
+                 font-variation-settings: "POST" 700; 
+               }
+             40% {
+                 font-variation-settings: "POST" 0; 
+                }
+             45% {
+                 font-variation-settings: "POST" 700; 
+               }
+             50% {
+                 font-variation-settings: "POST" 0;
+               }
+             55% {
+                 font-variation-settings: "POST" 700; 
+               }
+             60% {
+                 font-variation-settings: "POST" 0; 
+               }
+             70% {
+                 font-variation-settings: "POST" 700; text-shadow: 15px 15px 14px rgba(180, 219, 180, 0.7);
+               }
+             80% {
+                 font-variation-settings: "POST" 0;
+               }
+             90% {
+                 font-variation-settings: "POST" 700;
+               }
+            100% {
+                 font-variation-settings: "POST" 0; 
+               }
+        }
+
+        .fly-away-hovered {
+            animation: flapping 5s ease-in-out;
+
+        }
+
+    .space {
+    width: 50px; 
+    }
+
+    .video-container{
+        max-width: 100%;
+        min-width: 100%;
+        padding: 70px;
+   }
+
+   .block-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    padding: 50px;
+    }
+    
+    
+    .block {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    }
+
+    p {
+        font-family:"GT Pressura" ;
+        font-size: 20px;
+        color:  rgb(145, 182, 222);
+        text-align: center;
+        display: flex;
+        padding-left: 14%;
+        padding-right: 14%;
+    }
+    
+    .description-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    padding: 40px;
+    padding-top: 40px;
+    }
+
+    .tester-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px;
+    width: 100%;
+    color: white;
+    background-color: rgb(162, 206, 254);
+
+}
+
+.tester {
+            font-family: "BUTTERFLY";
+            font-size: 250px;
+            font-variation-settings: "POST" 0;
+            width: 100%;
+            /* padding: 40px; */
+            margin-bottom: 30px;
+            letter-spacing: -10px;
+            line-height: 1em;
+            text-align: center;
+        }
+
+        .slider-container {
+            font-family: "GT Pressura";
+            font-size: 20px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 20px 0 20px;
+        }
+
+        .slider {
+            font-family: "GT Pressura";
+            font-size: 10px;
+            width: 100%;
+            max-width: 400px;
+            padding: 10px;
+            margin: 0 20px 0 20px;
+            -webkit-appearance: none;  
+            height: 10px;  
+            border: none;  
+            background-color:pink; 
+            border-radius: 5px; 
+        }
+
+        .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;  /* Remove default thumb styling */
+    appearance: none;
+    width: 20px;  /* Size of the circle */
+    height: 20px;
+    border-radius: 50%;  /* Make the thumb circular */
+    background-color: rgb(255, 255, 255);  /* Pink color for the thumb */
+    cursor: pointer;  /* Pointer cursor on hover */
+}
+</style>
+<body>
+
+    <audio id="audioElement">
+        <source src="Poem.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <div class="title-container">
+        <span class="title" style="color: rgb(162, 206, 254);">F</span>
+        <span class="title" style="animation-delay: 0.3s; color:rgb(255, 204, 213);">L</span>
+        <span class="title" style="animation-delay: 0.1s; color: rgb(162, 206, 254);">U</span>
+        <span class="title" style="color: rgb(255, 204, 213)">T</span>
+        <span class="title" style="animation-delay: 1s; color: rgb(255, 204, 213)">T</span>
+        <span class="title" style="animation-delay: 0.1s; color: rgb(162, 206, 254);">E</span>
+        <span class="title" style="animation-delay: 0.5s; color: rgb(255, 204, 213)">R</span>
+        <span class="space" style=" width: 100px;" ></span>
+
+        <span class="title" style="color: rgb(162, 206, 254);">G</span>
+        <span class="title" style="animation-delay: 0.3s; color:rgb(255, 204, 213);">A</span>
+        <span class="title" style="animation-delay: 0.1s; color: rgb(162, 206, 254);">R</span>
+        <span class="title" style="color: rgb(255, 204, 213)">D</span>
+        <span class="title" style="animation-delay: 1s; color: rgb(255, 204, 213)">E</span>
+        <span class="title" style="animation-delay: 0.1s; color: rgb(162, 206, 254);">N</span>
+     </div> 
+
+    <div class="sub-title-container">
+        <img src="Artboard 1.png" alt="Butterfly image" class="sub-title-image">
+        <span class="space"></span>
+        <img src="Artboard 1.png" alt="Butterfly image" class="sub-title-image">
+        <span class="sub-title">Welcome to the flutter garden, hover to wake the butterflies up!</span>
+        <img src="Artboard 1.png" alt="Butterfly image" class="sub-title-image">
+        <span class="space"></span>
+        <img src="Artboard 1.png" alt="Butterfly image" class="sub-title-image">
+    </div>
+
+    <div class="body-container">
+        <!-- <div class="header-container" style="background-color: rgb(236, 255, 235); padding-top: 70px;"> 
+             <span class="body-text" style="left: 35%; top:10%; color: rgb(99, 138, 180); font-size: 17px;">Welcome to the second part of Titli Ud. Begin this experience by clicking (me)  </span> 
+            <img src="line.png" alt="Butterfly image" class="header-container">
+            <span class="body-text" style="left:41%;">TITLI UD—begin by clicking (me)</span>
+        </div> -->
+
+      <div class="fly-away-container">
+      
+        <span class="fly-away" onmouseenter="toggleFlyAwayClass(this)">E</span>
+        <span class="fly-away" style="color: pink;" onmouseenter="toggleFlyAwayClass(this)">n</span>
+        <span class="fly-away" onmouseenter="toggleFlyAwayClass(this)">g</span>
+        <span class="fly-away" style="color: pink;" onmouseenter="toggleFlyAwayClass(this)">li</span>
+        <span class="fly-away" style="color: pink;" onmouseenter="toggleFlyAwayClass(this)">s</span>
+        <span class="fly-away" style="letter-spacing: 50px;" onmouseenter="toggleFlyAwayClass(this)">h</span>
+
+        <span class="fly-away"  onmouseenter="toggleFlyAwayClass(this)">i</span>
+        <span class="fly-away"  style="letter-spacing: 50px;" onmouseenter="toggleFlyAwayClass(this)">s</span>
+
+        <span class="fly-away" style="letter-spacing: 50px;" onmouseenter="toggleFlyAwayClass(this)">a</span>
+
+        <!-- <span class="body-text" style="color: rgb(112, 147, 115); left: 27%; top: 30%; font-size: 1vw; ;">(listen)</span> -->
+        
+        <span class="fly-away" style="color: pink;" onmouseenter="toggleFlyAwayClass(this)">l</span>
+        <span class="fly-away"  onmouseenter="toggleFlyAwayClass(this)">a</span>
+        <span class="fly-away" style=" color: pink;" onmouseenter="toggleFlyAwayClass(this)">ng</span>
+        <span class="fly-away"  onmouseenter="toggleFlyAwayClass(this)">ua</span>
+        <span class="fly-away"  onmouseenter="toggleFlyAwayClass(this)">g</span>
+        <span class="fly-away" style=" color: pink; letter-spacing: 50px;">e</span>
+
+        <span class="fly-away" style="color: pink;" onmouseenter="toggleFlyAwayClass(this)">ma</span>
+        <span class="fly-away"  onmouseenter="toggleFlyAwayClass(this)">r</span>
+        <span class="fly-away" style="color: pink;" onmouseenter="toggleFlyAwayClass(this)">k</span>
+        <span class="fly-away"  onmouseenter="toggleFlyAwayClass(this)">e</span>
+        <span class="fly-away" style="color: pink; letter-spacing: 50px;" onmouseenter="toggleFlyAwayClass(this)">d</span>
+
+        <span class="fly-away" style="color: pink;" onmouseenter="toggleFlyAwayClass(this)">b</span>
+        <span class="fly-away" style="letter-spacing: 50px;" onmouseenter="toggleFlyAwayClass(this)">y</span>
+
+        <span class="fly-away" style="color: pink; " onmouseenter="toggleFlyAwayClass(this)">s</span>
+        <span class="fly-away" onmouseenter="toggleFlyAwayClass(this)">i</span>
+        <span class="fly-away" style="color: pink;" onmouseenter="toggleFlyAwayClass(this)">g</span>
+        <span class="fly-away" onmouseenter="toggleFlyAwayClass(this)">ni</span>
+        <span class="fly-away" onmouseenter="toggleFlyAwayClass(this)">f</span>
+        <span class="fly-away" onmouseenter="toggleFlyAwayClass(this)">i</span>
+        <span class="fly-away" onmouseenter="toggleFlyAwayClass(this)">can</span>
+        <span class="fly-away" style="letter-spacing: 50px;" onmouseenter="toggleFlyAwayClass(this)">t</span>
+           
+        <span class="fly-away" style="color: pink;" onmouseenter="toggleFlyAwayClass(this)">c</span>
+        <span class="fly-away" onmouseenter="toggleFlyAwayClass(this)">o</span>
+        <span class="fly-away" style="color: pink;" onmouseenter="toggleFlyAwayClass(this)">m</span>
+        <span class="fly-away" onmouseenter="toggleFlyAwayClass(this)">p</span>
+        <span class="fly-away" style="color: pink;" onmouseenter="toggleFlyAwayClass(this)">l</span>
+        <span class="fly-away" style="color: pink;" onmouseenter="toggleFlyAwayClass(this)">ex</span>
+        <span class="fly-away" onmouseenter="toggleFlyAwayClass(this)">ity</span>
+        <span class="fly-away" style="letter-spacing: 10px;" onmouseenter="toggleFlyAwayClass(this)">,</span>
+
+        <span class="fly-away" style="color: pink;" onmouseenter="toggleFlyAwayClass(this)">e</span>
+        <span class="fly-away" onmouseenter="toggleFlyAwayClass(this)">m</span>
+        <span class="fly-away" style="color: pink;" onmouseenter="toggleFlyAwayClass(this)">b</span>
+        <span class="fly-away" onmouseenter="toggleFlyAwayClass(this)">od</span>
+        <span class="fly-away" style="color: pink;" onmouseenter="toggleFlyAwayClass(this)">yi</span>
+        <span class="fly-away" onmouseenter="toggleFlyAwayClass(this)">n</span>
+        <span class="fly-away" style="letter-spacing: 50px;" onmouseenter="toggleFlyAwayClass(this)">g</span>
+
+        <span class="fly-away" style="letter-spacing: 50px;" onmouseenter="toggleFlyAwayClass(this)">a</span>
+
+        <span class="fly-away" style="color: pink;">r</span>
+        <span class="fly-away" onmouseenter="toggleFlyAwayClass(this)">a</span>
+        <span class="fly-away" style="color: pink;" onmouseenter="toggleFlyAwayClass(this)">n</span>
+        <span class="fly-away" onmouseenter="toggleFlyAwayClass(this)">g</span>
+        <span class="fly-away" style="letter-spacing: 50px;" onmouseenter="toggleFlyAwayClass(this)">e</span>
+
+        <span class="fly-away" style="color: pink;" onmouseenter="toggleFlyAwayClass(this)">o</span>
+        <span class="fly-away" style="letter-spacing: 50px;" onmouseenter="toggleFlyAwayClass(this)">f</span>
+
+        <span class="fly-away" style="color: pink;" onmouseenter="toggleFlyAwayClass(this)">s</span>
+        <span class="fly-away" onmouseenter="toggleFlyAwayClass(this)">o</span>
+        <span class="fly-away" style="color: pink;"onmouseenter="toggleFlyAwayClass(this)">c</span>
+        <span class="fly-away" onmouseenter="toggleFlyAwayClass(this)">i</span>
+        <span class="fly-away" style="color: pink;"onmouseenter="toggleFlyAwayClass(this)">al</span>
+        <span class="fly-away" style="letter-spacing: 10px;" onmouseenter="toggleFlyAwayClass(this)">,</span>
+
+        <span class="fly-away" style="color: pink;" onmouseenter="toggleFlyAwayClass(this)">e</span>
+        <span class="fly-away" onmouseenter="toggleFlyAwayClass(this)">con</span>
+        <span class="fly-away" style="color: pink;"onmouseenter="toggleFlyAwayClass(this)">om</span>
+        <span class="fly-away" style="color: pink;"onmouseenter="toggleFlyAwayClass(this)">i</span>
+        <span class="fly-away" style="letter-spacing: 50px;" onmouseenter="toggleFlyAwayClass(this)">c</span>
+<!-- 
+        <span class="body-text" style="color: rgb(112, 147, 115); left: 87%; top: 10%; font-size: 1vw; ;">(listen)</span> -->
+        
+        <span class="fly-away" style="color: pink;" onmouseenter="toggleFlyAwayClass(this)">a</span>
+        <span class="fly-away" onmouseenter="toggleFlyAwayClass(this)">n</span>
+        <span class="fly-away" style="letter-spacing: 50px;" onmouseenter="toggleFlyAwayClass(this)">d</span>
+
+        <span class="fly-away" style="color: pink;" onmouseenter="toggleFlyAwayClass(this)">c</span>
+        <span class="fly-away" onmouseenter="toggleFlyAwayClass(this)">u</span>
+        <span class="fly-away" style="color: pink;" onmouseenter="toggleFlyAwayClass(this)">l</span>
+        <span class="fly-away" onmouseenter="toggleFlyAwayClass(this)">t</span>
+        <span class="fly-away" style="color: pink;" onmouseenter="toggleFlyAwayClass(this)">u</span>
+        <span class="fly-away" onmouseenter="toggleFlyAwayClass(this)">r</span>
+        <span class="fly-away" style="color: pink;" onmouseenter="toggleFlyAwayClass(this)">a</span>
+        <span class="fly-away" style="letter-spacing: 50px;" onmouseenter="toggleFlyAwayClass(this)">l</span>
+
+        <span class="fly-away" style="color: pink;" onmouseenter="toggleFlyAwayClass(this)">p</span>
+        <span class="fly-away" onmouseenter="toggleFlyAwayClass(this)">os</span>
+        <span class="fly-away" style="color: pink;" onmouseenter="toggleFlyAwayClass(this)">it</span>
+        <span class="fly-away" onmouseenter="toggleFlyAwayClass(this)">io</span>
+        <span class="fly-away" style="color: pink;" onmouseenter="toggleFlyAwayClass(this)">nal</span>
+        <span class="fly-away" onmouseenter="toggleFlyAwayClass(this)">i</span>
+        <span class="fly-away" style="color: pink;" onmouseenter="toggleFlyAwayClass(this)">t</span>
+        <span class="fly-away" onmouseenter="toggleFlyAwayClass(this)">ie</span>
+        <span class="fly-away" style="letter-spacing: 10px;" onmouseenter="toggleFlyAwayClass(this)">s</span>
+
+        <span class="fly-away" style="letter-spacing: 20px;" onmouseenter="toggleFlyAwayClass(this)">.</span>
+
+      </div>
+    
+
+     <div class="description-container">
+        <div class="block">
+            <p>Flutter is a typeface inspired by one of my earliest poems in English, which, though seemingly nonsensical, captured something deeply true about who I was at the time. Through this typeface, I aim to express the fleeting, ephemeral quality of a butterfly—much like the poem itself. It evokes the illegibility of a child’s writing, the feeling of grasping for something that slips away just as you reach for it.
+
+             I’m interested in the legibility of language, especially as someone for whom English is not the first language, yet the one I speak most fluently. I wanted to explore when this switch happened, because while language enables conversation, it also replaces the sounds of your native tongue—in my case, Punjabi. Flutter is an ode to my younger self, through which I seek to capture those moments of transition in language, and the slippages and illegibilities that occur in those spaces.</span>
+            </p>
+        </div>
+        </div>
+
+    <div class="body-container">
+        <div class="header-container" style="background-color: rgb(246, 209, 216);"> 
+            <img src="line.png" alt="Butterfly image" class="header-container">
+            <span class="body-text" style="top: 50px;">ALPHABET</span>
+        </div>  
+
+        
+  <div class="alphabet-container">
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">A</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">B</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">C</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">D</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">E</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">F</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">G</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">H</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">I</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">J</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">K</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">L</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">M</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">N</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">O</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">P</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">Q</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">R</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">S</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">T</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">U</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">V</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">W</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">X</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">Y</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">Z</span>
+        </div> 
+        
+
+        <!-- <div class="alphabet-container" style="background-color: rgb(162, 206, 254) ;">
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">a</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">b</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">c</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">d</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">e</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">f</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">g</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">h</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">i</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">j</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">k</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">l</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">m</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">n</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">o</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">p</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">q</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">r</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">s</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">t</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">u</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">v</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">w</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">x</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">y</span>
+            <span class="alphabet" onmouseenter="toggleMyVariableClass(this)">z</span>
+        
+        </div>   -->
+
+    </div>
+
+    
+   <div class="body-container">
+        <div class="header-container" style="background-color: rgb(162, 206, 254);;"> 
+            <img src="line.png" alt="Butterfly image" class="header-container">
+            <span class="body-text" style="top: 55px; left: 700px" >TYPE TO COLLECT YOUR BUTTERFLIES</span>
+        </div>
+    <div class="tester-container">
+        <div class="tester" contenteditable="plaintext-only" id="tester">BY  JYOT </div>
+        <div class="slider-container">
+            <span>0</span>
+            <input id="tester-slider1" class="slider" type="range" min="0" max="1000" value="0">
+            <span>1000</span>
+        </div>
+    </div>
+          
+
+<script>
+    function toggleMyVariableClass(myElement) {
+        myElement.classList.toggle('alphabet-hovered')
+
+    }
+
+    function toggleFlyAwayClass(myElement) {
+            
+            // Add flapping animation
+            myElement.style.animation = 'none'; // Remove the animation
+            myElement.offsetHeight; // Trigger reflow to reset animation
+            myElement.style.animation = 'flapping 6s ease-in-out'; // Re-add the animation
+
+            // Delay the random motion by 1 second
+            setTimeout(() => {
+                // Generate random positions
+                const randomX = Math.random() * 400 - 200; // Random between -200px and 200px
+                const randomY = Math.random() * 400 - 200; // Random between -200px and 200px
+
+                // Apply new position
+                myElement.style.transform = `translateX(${randomX}px) translateY(${randomY}px)`;
+            }, 300); // 1-second delay
+        }
+
+        document.body.addEventListener('click', function() {
+            var audio = document.getElementById('audioElement');
+            // Play audio if not already playing
+            if (audio.paused) {
+                audio.play();
+            }
+        });
+
+    const slider = document.getElementById('tester-slider1');
+        const tester = document.getElementById('tester');
+
+        // Listen for slider input events
+        slider.addEventListener('input', function() {
+            const value = slider.value;
+            
+            // Update the font-variation-settings based on the slider value
+            tester.style.fontVariationSettings = `"POST" ${value}`;
+        });
+
+</script>
+
+    
+</body>
+</html>
